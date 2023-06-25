@@ -1,5 +1,5 @@
 {% set name = "emdfile" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/emdfile-{{ version }}.tar.gz
-  sha256: 0027eab62c909918096b849e048dd6e9a9160b52e48127d740473006d01c104d
+  sha256: fdc98b31684d9a298a6fc63733c16ab1e852af1fb77343acbd19fd7fc5c0cdcb
 
 build:
   noarch: python
@@ -36,7 +36,7 @@ test:
 
 about:
   home: https://github.com/py4dstem/emdfile
-  summary: 'interfaces with EMD 1.0 files'
+  summary: interfaces with EMD 1.0 files
   description: |
     EMD (Electron Microscopy Dataset) 1.0 is an HDF5 based file format 
     which is designed to carry arbitrary data and metadata. emdfile is a
