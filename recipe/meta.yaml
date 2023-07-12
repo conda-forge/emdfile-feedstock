@@ -1,5 +1,5 @@
 {% set name = "emdfile" %}
-{% set version = "0.0.10" %}
+{% set version = "0.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/emdfile-{{ version }}.tar.gz
-  sha256: d4e351568300469fbb91f7f999b49747de2812b771bf8f26e0510eba9dbfb354
+  sha256: c0202ed62111b329b2c27faa539d9fcc90ffb0193ad803064a7a039dce9fe393
 
 build:
   noarch: python
