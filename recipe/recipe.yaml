@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: emdfile
+  version: "0.0.16"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/emdfile-${{ version }}.tar.gz
+  sha256: f477047ed00c5c71cc7ee2c6501b8ae3d511e5f719ccec3c3a46e3203842d6ef
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - h5py >=3.2.0
+    - tqdm >=4.46.1
+    - numpy
+    - scipy
+
+tests:
+  - python:
+      imports:
+        - emdfile
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: interfaces with EMD 1.0 files
+  description: |
+    EMD (Electron Microscopy Dataset) 1.0 is an HDF5 based file format
+    which is designed to carry arbitrary data and metadata. emdfile is a
+    Python package defining write and read functions and a set of classes
+    which together interface between EMD 1.0 files and Python runtime
+    objects. The classes are designed to quickly build, save to, and read
+    from filetree-like representations of data and metadata, and is built
+    on HDF5+h5py.
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+  homepage: https://github.com/py4dstem/emdfile
+  repository: https://github.com/py4dstem/emdfile
+  documentation: https://emdatasets.com/format/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
